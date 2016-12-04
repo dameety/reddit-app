@@ -20,9 +20,8 @@ exports.onNavigatingTo = function (args) {
 
 
 function loadReddit() {
-	http.getJSON("https://www.reddit.com/r/CrazyIdeas/.json")
+	http.getJSON("https://www.reddit.com/.json")
 	.then(function (response) {
-		//change the title after loading
 		   
 		//push each item to the allItems array
 		response.data.children.map(function (item) {
