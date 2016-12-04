@@ -1,0 +1,19 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" 
+  xmlns:x="nativescript-statusbar"
+  navigatingTo="onNavigatingTo">
+
+  <x:StatusBar ios:barStyle="light" android:barStyle="#FF1100" />
+
+  <ActionBar class="actionBar" title="{{title}}">
+      <NavigationButton text="Back" android.systemIcon = "ic_menu_back" color="black" tap="goBackHome"/>
+      <ActionBar.actionItems>
+          <ActionItem text="Share" position="right" tap="toggleDrawer"/>
+      </ActionBar.actionItems>
+  </ActionBar>
+
+<!--   <StackLayout> -->
+
+    <WebView class="url" src="{{ url }}" />
+    
+  <!-- </StackLayout> -->
+</Page> 
