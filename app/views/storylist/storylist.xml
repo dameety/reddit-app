@@ -1,0 +1,30 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd"
+  xmlns:x="nativescript-statusbar"
+  navigatingTo="onNavigatingTo">
+
+
+  <x:StatusBar ios:barStyle="light" android:barStyle="#FF1100" />
+
+  <ActionBar class="actionBar" title="Reddit - Crazy Ideas">
+        <ActionBar.actionItems>
+            <ActionItem text="filter" position="right" color="white" tap="toggleDrawer"/>
+        </ActionBar.actionItems>
+  </ActionBar>
+
+  <StackLayout class="allItems">
+    <!-- top label -->
+    <ListView items="{{ allItems }}">
+    	<ListView.itemTemplate>
+    		<StackLayout class="listItems" tap="storyTap">
+	    		<Label class="title" text="{{ title }}" textWrap="true"/>
+          <StackLayout class="listItems" orientation="horizontal">  
+            <Label class="author" text= "Author: "/>
+            <Label class="author" text="{{ author}}" textWrap="true"/>
+            <Label class="author" text= "Posted: "/>
+            <Label class="author" text="{{friendlyTime}}" textWrap="true" />
+          </StackLayout>
+	    	</StackLayout>
+    	</ListView.itemTemplate>
+    </ListView>
+  </StackLayout>
+</Page>

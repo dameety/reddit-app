@@ -1,0 +1,21 @@
+.title {
+}
+
+.author {
+	font-size: 12;
+	color: red;
+}
+
+
+.mainTitle {
+	font-size: 18
+}
+
+.allItems {
+	margin: 5;
+}
+
+.listItems {
+	margin-bottom: 10;
+	margin-top: 10;
+}
