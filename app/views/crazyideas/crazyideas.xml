@@ -5,13 +5,10 @@
 
   <x:StatusBar ios:barStyle="light" android:barStyle="#FF1100" />
 
-  <ActionBar class="actionBar" title="Reddit - Stories" horizontalAlignment="center">
-    <ActionBar.actionItems>
-        <ActionItem text="Categories" position="right" tap="toggleDrawer"/>
-    </ActionBar.actionItems>
+  <ActionBar class="actionBar" title="Crazy Ideas - Subreddit" horizontalAlignment="center">
   </ActionBar>
 
-  <drawer:RadSideDrawer id="drawer" drawerLocation="Bottom" drawerContentSize="200">
+  <drawer:RadSideDrawer id="drawer" drawerLocation="Bottom" drawerContentSize="300">
 
     <!-- The main settings content -->
     <drawer:RadSideDrawer.mainContent>  
@@ -23,13 +20,13 @@
     	    		<Label class="title" text="{{ title }}" textWrap="true"/>
               <StackLayout orientation="horizontal">
                 <StackLayout orientation="horizontal">  
-                  <Label class="author" text="Author: "/>
-                  <Label class="author" text="{{author}}" textWrap="true"/>
-                  <Label class="author" text="  " />
+                  <Label class="authorCss" text="Author: "/>
+                  <Label class="authorCss" text="{{author}}" textWrap="true"/>
+                  <Label class="authorCss" text="  " />
                 </StackLayout>
                 <StackLayout orientation="horizontal">  
-                  <Label class="author" text="Posted: "/>
-                  <Label class="author" text="{{friendlyTime}}" textWrap="true" />
+                  <Label class="postedCss" text="Posted: "/>
+                  <Label class="postedCss" text="{{friendlyTime}}" textWrap="true" />
                 </StackLayout>
               </StackLayout>
     	    	</StackLayout>  
@@ -44,6 +41,7 @@
       <ScrollView>
           <GridLayout class="drawer-content">
               <StackLayout orientation="vertical" horizontalAlignment="center" verticalAlignment="center">
+                <Button class="drawerButton" text="Home" tap="gotoHome" />
                 <Button class="drawerButton" text="Crazy Ideas" tap="gotoCrazyIdeas" />
                 <Button class="drawerButton" text="Programming" tap="gotoProgramming" />
                 <Button class="drawerButton" text="Business" tap="gotoBusiness" />
