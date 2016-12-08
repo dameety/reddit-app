@@ -2,29 +2,33 @@
   xmlns:x="nativescript-statusbar"
   navigatingTo="onNavigatingTo">
 
-
   <x:StatusBar ios:barStyle="light" android:barStyle="#FF1100" />
 
-  <ActionBar class="actionBar" title="Reddit - Crazy Ideas">
-        <ActionBar.actionItems>
-            <ActionItem text="filter" position="right" color="white" tap="toggleDrawer"/>
-        </ActionBar.actionItems>
+  <ActionBar class="actionBar" title="Reddit - Stories" horizontalAlignment="center">
+    <ActionBar.actionItems>
+        <ActionItem text="Categories" position="right" tap="chooseCategory"/>
+    </ActionBar.actionItems>
   </ActionBar>
 
   <StackLayout class="allItems">
-    <!-- top label -->
     <ListView items="{{ allItems }}">
     	<ListView.itemTemplate>
-    		<StackLayout class="listItems" tap="storyTap">
+    		<StackLayout class="stackBody" tap="storyTap" marginTop="5" marginBottom="5">
 	    		<Label class="title" text="{{ title }}" textWrap="true"/>
-          <StackLayout class="listItems" orientation="horizontal">  
-            <Label class="author" text= "Author: "/>
-            <Label class="author" text="{{ author}}" textWrap="true"/>
-            <Label class="author" text= "Posted: "/>
-            <Label class="author" text="{{friendlyTime}}" textWrap="true" />
+          <StackLayout orientation="horizontal">
+            <StackLayout orientation="horizontal">  
+              <Label class="author" text="Author: "/>
+              <Label class="author" text="{{author}}" textWrap="true"/>
+              <Label class="author" text="  " />
+            </StackLayout>
+            <StackLayout orientation="horizontal">  
+              <Label class="author" text="Posted: "/>
+              <Label class="author" text="{{friendlyTime}}" textWrap="true" />
+            </StackLayout>
           </StackLayout>
-	    	</StackLayout>
+	    	</StackLayout>  
     	</ListView.itemTemplate>
     </ListView>
   </StackLayout>
+
 </Page>

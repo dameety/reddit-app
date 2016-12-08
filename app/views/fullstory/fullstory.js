@@ -1,4 +1,3 @@
-// var createViewModel = require("./main-view-model").createViewModel;
 var Observable = require("data/observable");
 var ObservableArray = require("data/observable-array");
 var http = require("http");

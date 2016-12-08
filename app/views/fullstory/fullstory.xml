@@ -11,9 +11,6 @@
       </ActionBar.actionItems>
   </ActionBar>
 
-<!--   <StackLayout> -->
-
-    <WebView class="url" src="{{ url }}" />
+  <WebView class="url" src="{{ url }}" />
     
-  <!-- </StackLayout> -->
 </Page> 

@@ -6,7 +6,6 @@
 	color: red;
 }
 
-
 .mainTitle {
 	font-size: 18
 }
@@ -15,7 +14,9 @@
 	margin: 5;
 }
 
-.listItems {
-	margin-bottom: 10;
-	margin-top: 10;
+.stackBody { 
+	/*	margin-bottom: 30;
+		margin-top: 30;*/
+	padding-bottom: 20;
+	padding-top: 20;
 }

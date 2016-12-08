@@ -18,11 +18,14 @@ exports.onNavigatingTo = function (args) {
 	loadReddit();
 }
 
+// exports.chooseCategory = function (args) {
+// 	http.getJSON("h")
+// }
 
 function loadReddit() {
 	http.getJSON("https://www.reddit.com/.json")
 	.then(function (response) {
-		   
+		
 		//push each item to the allItems array
 		response.data.children.map(function (item) {
 			item.data.friendlyTime= moment(item.data.created_utc * 1000).fromNow();
@@ -41,6 +44,5 @@ exports.storyTap = function (args) {
             name: "slide",
         },
         context: args.view.bindingContext
-        
     });
 }

@@ -10,6 +10,7 @@
     }
   },
   "dependencies": {
+    "moment": "^2.17.1",
     "tns-core-modules": "2.4.1"
   },
   "devDependencies": {
