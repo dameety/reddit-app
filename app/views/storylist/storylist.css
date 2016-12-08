@@ -1,4 +1,5 @@
 .title {
+	font-size: 14;
 }
 
 .author {
@@ -6,17 +7,24 @@
 	color: red;
 }
 
-.mainTitle {
-	font-size: 18
-}
-
 .allItems {
 	margin: 5;
 }
 
 .stackBody { 
-	/*	margin-bottom: 30;
-		margin-top: 30;*/
 	padding-bottom: 20;
 	padding-top: 20;
+}
+
+.drawer-content {
+	background-color: black;
+	font-size: 16;
+	color: white;
+	padding-top: 5;
+	padding-bottom: 5;
+}
+
+.drawerButton {
+	background-color: black;
+	color: white;
 }

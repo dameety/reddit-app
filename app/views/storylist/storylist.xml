@@ -1,34 +1,57 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
   xmlns:x="nativescript-statusbar"
+  xmlns:drawer="nativescript-telerik-ui/sidedrawer"
   navigatingTo="onNavigatingTo">
 
   <x:StatusBar ios:barStyle="light" android:barStyle="#FF1100" />
 
   <ActionBar class="actionBar" title="Reddit - Stories" horizontalAlignment="center">
     <ActionBar.actionItems>
-        <ActionItem text="Categories" position="right" tap="chooseCategory"/>
+        <ActionItem text="Categories" position="right" tap="toggleDrawer"/>
     </ActionBar.actionItems>
   </ActionBar>
 
-  <StackLayout class="allItems">
-    <ListView items="{{ allItems }}">
-    	<ListView.itemTemplate>
-    		<StackLayout class="stackBody" tap="storyTap" marginTop="5" marginBottom="5">
-	    		<Label class="title" text="{{ title }}" textWrap="true"/>
-          <StackLayout orientation="horizontal">
-            <StackLayout orientation="horizontal">  
-              <Label class="author" text="Author: "/>
-              <Label class="author" text="{{author}}" textWrap="true"/>
-              <Label class="author" text="  " />
-            </StackLayout>
-            <StackLayout orientation="horizontal">  
-              <Label class="author" text="Posted: "/>
-              <Label class="author" text="{{friendlyTime}}" textWrap="true" />
-            </StackLayout>
-          </StackLayout>
-	    	</StackLayout>  
-    	</ListView.itemTemplate>
-    </ListView>
-  </StackLayout>
+  <drawer:RadSideDrawer id="drawer" drawerLocation="Bottom" drawerContentSize="150">
+
+    <!-- The main settings content -->
+    <drawer:RadSideDrawer.mainContent>  
+
+      <StackLayout class="allItems">
+        <ListView items="{{ allItems }}">
+        	<ListView.itemTemplate>
+        		<StackLayout class="stackBody" tap="storyTap" marginTop="3" marginBottom="3">
+    	    		<Label class="title" text="{{ title }}" textWrap="true"/>
+              <StackLayout orientation="horizontal">
+                <StackLayout orientation="horizontal">  
+                  <Label class="author" text="Author: "/>
+                  <Label class="author" text="{{author}}" textWrap="true"/>
+                  <Label class="author" text="  " />
+                </StackLayout>
+                <StackLayout orientation="horizontal">  
+                  <Label class="author" text="Posted: "/>
+                  <Label class="author" text="{{friendlyTime}}" textWrap="true" />
+                </StackLayout>
+              </StackLayout>
+    	    	</StackLayout>  
+        	</ListView.itemTemplate>
+        </ListView>
+      </StackLayout>
+
+    </drawer:RadSideDrawer.mainContent>
+
+    <!-- side drawer content -->
+    <drawer:RadSideDrawer.drawerContent>
+      <ScrollView>
+          <GridLayout class="drawer-content">
+              <StackLayout orientation="vertical" horizontalAlignment="center" verticalAlignment="center">
+                <Button class="drawerButton" text="Crazy Ideas" tap="crazyIdeasTap" />
+                <Button class="drawerButton" text="Programming" tap="programmingTap" />
+                <Button class="drawerButton" text="Business" tap="businessTap" />
+              </StackLayout>
+          </GridLayout>
+      </ScrollView>
+    </drawer:RadSideDrawer.drawerContent>
+
+  </drawer:RadSideDrawer>
 
 </Page>
