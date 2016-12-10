@@ -6,6 +6,9 @@
   <x:StatusBar ios:barStyle="light" android:barStyle="#FF1100" />
 
   <ActionBar class="actionBar" title="Crazy Ideas - Subreddit" horizontalAlignment="center">
+    <ActionBar.actionItems>
+        <ActionItem text="Categories" position="right" tap="toggleDrawer"/>
+    </ActionBar.actionItems>
   </ActionBar>
 
   <drawer:RadSideDrawer id="drawer" drawerLocation="Bottom" drawerContentSize="170">

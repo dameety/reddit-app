@@ -5,7 +5,10 @@
 
   <x:StatusBar ios:barStyle="light" android:barStyle="#FF1100" />
 
-  <ActionBar class="actionBar" title="Crazy Ideas - Subreddit" horizontalAlignment="center">
+  <ActionBar class="actionBar" title="Business - Subreddit" horizontalAlignment="center">
+    <ActionBar.actionItems>
+        <ActionItem text="Categories" position="right" tap="toggleDrawer"/>
+    </ActionBar.actionItems>
   </ActionBar>
 
   <drawer:RadSideDrawer id="drawer" drawerLocation="Bottom" drawerContentSize="170">
@@ -43,7 +46,7 @@
               <StackLayout orientation="vertical" horizontalAlignment="center" verticalAlignment="center">
                 <Button class="drawerButton" text="Home" tap="gotoHome" />
                 <Button class="drawerButton" text="Programming" tap="gotoProgramming" />
-                <Button class="drawerButton" text="Business" tap="gotoCrazyIdeas" />
+                <Button class="drawerButton" text="Crazy Ideas" tap="gotoCrazyIdeas" />
               </StackLayout>
           </GridLayout>
       </ScrollView>
