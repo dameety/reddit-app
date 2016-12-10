@@ -12,10 +12,8 @@ var viewModel = new Observable.Observable({
 });
 
 function loadProgramming () {
-	// change this url
 	http.getJSON("https://www.reddit.com/r/programming/.json")
 	.then(function (response) {
-		console.log("crazy ideas loaded")
 		//push each item to the allItems array
 		response.data.children.map(function (item) {
 			item.data.friendlyTime= moment(item.data.created_utc * 1000).fromNow();

@@ -9,9 +9,22 @@ var page;
 
 var viewModel = new Observable.Observable({    
 	allItems: new ObservableArray.ObservableArray([]),
-	newItems: new ObservableArray.ObservableArray([])
 });
  
+
+// load all reddit frontpage stories
+function loadReddit() {
+    http.getJSON("https://www.reddit.com/.json")
+    .then(function (response) {
+        //push each item to the allItems array
+        response.data.children.map(function (item) {
+            item.data.friendlyTime= moment(item.data.created_utc * 1000).fromNow();
+            viewModel.allItems.push(item.data);
+        })
+    })
+}
+
+
 exports.onNavigatingTo = function (args) {
 	page = args.object;
 	page.bindingContext = viewModel;
@@ -67,21 +80,8 @@ exports.gotoBusiness = function (args) {
             name: "slideUp",
         },
         clearHistory: true
-        
+
     });
-}
-
-
-// load all reddit frontpage stories
-function loadReddit() {
-	http.getJSON("https://www.reddit.com/.json")
-	.then(function (response) {
-		//push each item to the allItems array
-		response.data.children.map(function (item) {
-			item.data.friendlyTime= moment(item.data.created_utc * 1000).fromNow();
-			viewModel.allItems.push(item.data);
-		})
-	})
 }
 
 

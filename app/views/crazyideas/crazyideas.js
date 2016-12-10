@@ -16,7 +16,6 @@ var viewModel = new Observable.Observable({
 function loadCrazyIdeas () {
 	http.getJSON("https://www.reddit.com/r/CrazyIdeas/.json")
 	.then(function (response) {
-		console.log("crazy ideas loaded")
 		//push each item to the allItems array
 		response.data.children.map(function (item) {
 			item.data.friendlyTime= moment(item.data.created_utc * 1000).fromNow();

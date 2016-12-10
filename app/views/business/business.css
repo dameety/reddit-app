@@ -1,0 +1,35 @@
+.title {
+	font-size: 14;
+}
+
+.authorCss {
+	font-size: 12;
+	color: red;
+}
+
+.postedCss {
+	font-size: 12;
+	color: red;
+}
+
+.allItems {
+	margin: 5;
+}
+
+.stackBody { 
+	padding-bottom: 20;
+	padding-top: 20;
+}
+
+.drawer-content {
+	background-color: black;
+	font-size: 16;
+	color: white;
+	padding-top: 5;
+	padding-bottom: 5;
+}
+
+.drawerButton {
+	background-color: black;
+	color: white;
+}
