@@ -23,11 +23,46 @@ exports.toggleDrawer = function (args) {
 	drawer.toggleDrawerState();
 }
 
-exports.crazyIdeasTap = function (args) {
+exports.gotoCrazyIdeas = function (args) {
 	drawer.closeDrawer();
-	loadCrazyIdeas();
+	frameModule.topmost().navigate({
+        moduleName: "./views/crazyideas/crazyideas",
+        animated: true,  
+        transition: {
+            duration: 100,
+            curve: "easeIn",
+            name: "slideUp",
+        },
+    });
 }
 
+exports.gotoProgramming = function (args) {
+	drawer.closeDrawer();
+	frameModule.topmost().navigate({
+        moduleName: "./views/programming/programming",
+        animated: true,
+        transition: {
+            duration: 100,
+            curve: "easeIn",
+            name: "slideUp",
+        },
+    });
+}
+
+exports.gotoBusiness = function (args) {
+	drawer.closeDrawer();
+	frameModule.topmost().navigate({
+        moduleName: "./views/businees/businees",
+        animated: true,
+        transition: {
+            duration: 100,
+            curve: "easeIn",
+            name: "slideUp",
+        },
+    });
+}
+
+//load all stories under crazy ideas
 function loadCrazyIdeas () {
 	http.getJSON("https://www.reddit.com/r/CrazyIdeas/.json")
 	.then(function (response) {
@@ -40,6 +75,8 @@ function loadCrazyIdeas () {
 	})
 }  
 
+
+// get the fullstory on the story clicked
 exports.storyTap = function (args) {
 	frameModule.topmost().navigate({
         moduleName: "./views/fullstory/fullstory",

@@ -23,6 +23,8 @@ exports.toggleDrawer = function (args) {
 	drawer.toggleDrawerState();
 }
 
+
+// navigate to crazy idaes
 exports.gotoCrazyIdeas = function (args) {
 	drawer.closeDrawer();
 	frameModule.topmost().navigate({
@@ -36,6 +38,7 @@ exports.gotoCrazyIdeas = function (args) {
     });
 }
 
+// navigate to programming
 exports.gotoProgramming = function (args) {
 	drawer.closeDrawer();
 	frameModule.topmost().navigate({
@@ -49,6 +52,7 @@ exports.gotoProgramming = function (args) {
     });
 }
 
+//navigate to business subreddit
 exports.gotoBusiness = function (args) {
 	drawer.closeDrawer();
 	frameModule.topmost().navigate({
@@ -62,6 +66,8 @@ exports.gotoBusiness = function (args) {
     });
 }
 
+
+// load all reddit frontpage stories
 function loadReddit() {
 	http.getJSON("https://www.reddit.com/.json")
 	.then(function (response) {
@@ -73,6 +79,8 @@ function loadReddit() {
 	})
 }
 
+
+// read the full story link
 exports.storyTap = function (args) {
 	frameModule.topmost().navigate({
         moduleName: "./views/fullstory/fullstory",
