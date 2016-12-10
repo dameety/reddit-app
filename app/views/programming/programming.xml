@@ -8,7 +8,7 @@
   <ActionBar class="actionBar" title="Programming - Subreddit" horizontalAlignment="center">
   </ActionBar>
 
-  <drawer:RadSideDrawer id="drawer" drawerLocation="Bottom" drawerContentSize="300">
+  <drawer:RadSideDrawer id="drawer" drawerLocation="Bottom" drawerContentSize="170">
 
     <!-- The main settings content -->
     <drawer:RadSideDrawer.mainContent>  
@@ -43,7 +43,6 @@
               <StackLayout orientation="vertical" horizontalAlignment="center" verticalAlignment="center">
                 <Button class="drawerButton" text="Home" tap="gotoHome" />
                 <Button class="drawerButton" text="Crazy Ideas" tap="gotoCrazyIdeas" />
-                <Button class="drawerButton" text="Programming" tap="gotoProgramming" />
                 <Button class="drawerButton" text="Business" tap="gotoBusiness" />
               </StackLayout>
           </GridLayout>

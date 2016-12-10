@@ -10,6 +10,19 @@ var page;
 var viewModel = new Observable.Observable({    
 	allItems: new ObservableArray.ObservableArray([]),
 });
+
+function loadProgramming () {
+	// change this url
+	http.getJSON("https://www.reddit.com/r/programming/.json")
+	.then(function (response) {
+		console.log("crazy ideas loaded")
+		//push each item to the allItems array
+		response.data.children.map(function (item) {
+			item.data.friendlyTime= moment(item.data.created_utc * 1000).fromNow();
+			viewModel.allItems.push(item.data);
+		})
+	})
+}
  
 exports.onNavigatingTo = function (args) {
 	page = args.object;
@@ -23,23 +36,52 @@ exports.toggleDrawer = function (args) {
 	drawer.toggleDrawerState();
 }
 
-exports.crazyIdeasTap = function (args) {
+exports.gotoHome = function (args) {
 	drawer.closeDrawer();
-	loadCrazyIdeas();
+	frameModule.topmost().navigate({
+        moduleName: "./views/storylist/storylist",
+        animated: true,  
+        transition: {
+            duration: 100,
+            curve: "easeIn",
+            name: "slideUp",
+        },
+        clearHistory: true
+    });
 }
 
-function loadCrazyIdeas () {
-	http.getJSON("https://www.reddit.com/r/CrazyIdeas/.json")
-	.then(function (response) {
-		console.log("crazy ideas loaded")
-		//push each item to the allItems array
-		response.data.children.map(function (item) {
-			item.data.friendlyTime= moment(item.data.created_utc * 1000).fromNow();
-			viewModel.allItems.push(item.data);
-		})
-	})
-}  
+exports.gotoCrazyIdeas = function (args) {
+	drawer.closeDrawer();
+	frameModule.topmost().navigate({
+        moduleName: "./views/crazyideas/crazyideas",
+        animated: true,
+        transition: {
+            duration: 100,
+            curve: "easeIn",
+            name: "slideUp",
+        },
+        clearHistory: true
 
+    });
+}
+
+
+exports.gotoBusiness = function (args) {
+	drawer.closeDrawer();
+	frameModule.topmost().navigate({
+        moduleName: "./views/businees/businees",
+        animated: true,
+        transition: {
+            duration: 100,
+            curve: "easeIn",
+            name: "slideUp",
+        },
+        clearHistory: true
+
+    });
+}
+  
+// navigate to get full story on clicked 
 exports.storyTap = function (args) {
 	frameModule.topmost().navigate({
         moduleName: "./views/fullstory/fullstory",
