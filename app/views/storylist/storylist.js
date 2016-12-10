@@ -35,6 +35,7 @@ exports.gotoCrazyIdeas = function (args) {
             curve: "easeIn",
             name: "slideUp",
         },
+        clearHistory: true
     });
 }
 
@@ -49,6 +50,8 @@ exports.gotoProgramming = function (args) {
             curve: "easeIn",
             name: "slideUp",
         },
+        clearHistory: true
+
     });
 }
 
@@ -63,6 +66,8 @@ exports.gotoBusiness = function (args) {
             curve: "easeIn",
             name: "slideUp",
         },
+        clearHistory: true
+        
     });
 }
 

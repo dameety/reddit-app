@@ -11,6 +11,21 @@ var viewModel = new Observable.Observable({
 	allItems: new ObservableArray.ObservableArray([]),
 });
  
+ 
+//load all stories under crazy ideas
+function loadCrazyIdeas () {
+	http.getJSON("https://www.reddit.com/r/CrazyIdeas/.json")
+	.then(function (response) {
+		console.log("crazy ideas loaded")
+		//push each item to the allItems array
+		response.data.children.map(function (item) {
+			item.data.friendlyTime= moment(item.data.created_utc * 1000).fromNow();
+			viewModel.allItems.push(item.data);
+		})
+	})
+} 
+
+
 exports.onNavigatingTo = function (args) {
 	page = args.object;
 	page.bindingContext = viewModel;
@@ -23,10 +38,10 @@ exports.toggleDrawer = function (args) {
 	drawer.toggleDrawerState();
 }
 
-exports.gotoCrazyIdeas = function (args) {
+exports.gotoHome = function (args) {
 	drawer.closeDrawer();
 	frameModule.topmost().navigate({
-        moduleName: "./views/crazyideas/crazyideas",
+        moduleName: "./views/storylist/storylist",
         animated: true,  
         transition: {
             duration: 100,
@@ -60,20 +75,7 @@ exports.gotoBusiness = function (args) {
             name: "slideUp",
         },
     });
-}
-
-//load all stories under crazy ideas
-function loadCrazyIdeas () {
-	http.getJSON("https://www.reddit.com/r/CrazyIdeas/.json")
-	.then(function (response) {
-		console.log("crazy ideas loaded")
-		//push each item to the allItems array
-		response.data.children.map(function (item) {
-			item.data.friendlyTime= moment(item.data.created_utc * 1000).fromNow();
-			viewModel.allItems.push(item.data);
-		})
-	})
-}  
+} 
 
 
 // get the fullstory on the story clicked
