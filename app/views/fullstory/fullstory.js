@@ -7,14 +7,12 @@ var SocialShare = require("nativescript-social-share");
 var page;
 
 
-
 var viewModel; 
 
 exports.onNavigatingTo = function (args) {
 	page = args.object;
 	viewModel = page.navigationContext;
 	page.bindingContext = viewModel;
-
 }
 
 exports.shareTap = function (args) {
