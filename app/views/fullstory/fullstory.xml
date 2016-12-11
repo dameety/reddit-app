@@ -6,6 +6,9 @@
 
   <ActionBar class="actionBar" title="{{title}}">
       <NavigationButton text="Back" android.systemIcon = "ic_menu_back" color="black" tap="goBackHome"/>
+      <ActionBar.actionItems>
+        <ActionItem text="Share" position="right" tap="shareTap"/>
+    </ActionBar.actionItems>
   </ActionBar>
 
   <WebView class="url" src="{{ url }}" />
