@@ -2,9 +2,14 @@
 	font-size: 14;
 }
 
-.author {
+.authorCss {
 	font-size: 12;
 	color: red;
+}
+
+.postedCss {
+	font-size: 12;
+	color: red;  
 }
 
 .allItems {

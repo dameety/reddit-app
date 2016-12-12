@@ -43,22 +43,22 @@
 
       <StackLayout class="allItems">
         <ListView items="{{ allItems }}">
-        	<ListView.itemTemplate>
-        		<StackLayout class="stackBody" tap="storyTap" marginTop="3" marginBottom="3">
-    	    		<Label class="title" text="{{ title }}" textWrap="true"/>
+          <ListView.itemTemplate>
+            <StackLayout class="stackBody" tap="storyTap" marginTop="3" marginBottom="3">
+              <Label class="title" text="{{ title }}" textWrap="true"/>
               <StackLayout orientation="horizontal">
                 <StackLayout orientation="horizontal">  
-                  <Label class="author" text="Author: "/>
-                  <Label class="author" text="{{author}}" textWrap="true"/>
-                  <Label class="author" text="  " />
+                  <Label class="authorCss" text="Author: "/>
+                  <Label class="authorCss" text="{{author}}" textWrap="true"/>
+                  <Label class="authorCss" text="  " />
                 </StackLayout>
                 <StackLayout orientation="horizontal">  
-                  <Label class="author" text="Posted: "/>
-                  <Label class="author" text="{{friendlyTime}}" textWrap="true" />
+                  <Label class="postedCss" text="Posted: "/>
+                  <Label class="postedCss" text="{{friendlyTime}}" textWrap="true" />
                 </StackLayout>
               </StackLayout>
-    	    	</StackLayout>  
-        	</ListView.itemTemplate>
+            </StackLayout>  
+          </ListView.itemTemplate>
         </ListView>
       </StackLayout>
 
