@@ -1,2 +1,2 @@
 var application = require("application");
-application.start({ moduleName: "./views/storylist/storylist" });
+application.start({ moduleName: "./views/home/home" });

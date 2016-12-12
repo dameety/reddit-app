@@ -40,7 +40,7 @@ exports.toggleDrawer = function (args) {
 exports.gotoHome = function (args) {
 	drawer.closeDrawer();
 	frameModule.topmost().navigate({
-        moduleName: "./views/storylist/storylist",
+        moduleName: "./views/home/home",
         animated: true,  
         transition: {
             duration: 100,
