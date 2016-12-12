@@ -1,6 +1,7 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd"
   xmlns:x="nativescript-statusbar"
   xmlns:drawer="nativescript-telerik-ui/sidedrawer"
+  xmlns:PullRefresh="nativescript-pulltorefresh"
   navigatingTo="onNavigatingTo">
 
   <x:StatusBar ios:barStyle="light" android:barStyle="#FF1100" />
@@ -15,6 +16,30 @@
 
     <!-- The main settings content -->
     <drawer:RadSideDrawer.mainContent>  
+
+      <!-- pull to referesh part -->
+      <stack-layout>   
+        <PullRefresh:PullToRefresh refresh="refreshList">
+            <list-view items="{{ allItems }}">
+                <list-view.itemTemplate>
+                    <StackLayout class="stackBody" tap="storyTap" marginTop="3" marginBottom="3">
+                      <Label class="title" text="{{ title }}" textWrap="true"/>
+                      <StackLayout orientation="horizontal">
+                        <StackLayout orientation="horizontal">  
+                          <Label class="author" text="Author: "/>
+                          <Label class="author" text="{{author}}" textWrap="true"/>
+                          <Label class="author" text="  " />
+                        </StackLayout>
+                        <StackLayout orientation="horizontal">  
+                          <Label class="author" text="Posted: "/>
+                          <Label class="author" text="{{friendlyTime}}" textWrap="true" />
+                        </StackLayout>
+                      </StackLayout>
+                    </StackLayout>                          
+                </list-view.itemTemplate>
+            </list-view>
+        </PullRefresh:PullToRefresh>        
+      </stack-layout> 
 
       <StackLayout class="allItems">
         <ListView items="{{ allItems }}">

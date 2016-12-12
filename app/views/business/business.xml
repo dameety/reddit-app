@@ -11,7 +11,7 @@
     </ActionBar.actionItems>
   </ActionBar>
 
-  <drawer:RadSideDrawer id="drawer" drawerLocation="Bottom" drawerContentSize="170">
+  <drawer:RadSideDrawer id="drawer" drawerLocation="Bottom" drawerContentSize="150">
 
     <!-- The main settings content -->
     <drawer:RadSideDrawer.mainContent>  

@@ -27,7 +27,6 @@ exports.onNavigatingTo = function (args) {
 	page = args.object;
 	page.bindingContext = viewModel;
 	drawer = page.getViewById("drawer");
-	
 	loadBusiness();
 }
 
